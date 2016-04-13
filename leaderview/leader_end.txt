@@ -1,0 +1,128 @@
+			resizeHtml();
+			
+			//loadData1("刘总");//外界调用
+			txt1(username1);
+			
+    		//loadData2(22,6,[42,22]);//外界调用
+    		drawCircle2("canvas_circle2", data_arr2);
+    		drawline2("canvas_line2");
+    		txt2(totaldemand2,Rank2,data_arr2);
+    		
+    		//loadData4(6,0.56);//外界调用
+    		drawCircle4("canvas_circle4", proportion4);
+    		slide4();
+			rotate("rocketgas4")			
+			txt4(rank4,proportion4);
+			
+			//loadData6([15,7]);//外界调用
+    		drawCircle6("canvas_circle6", data_arr6);
+    		up6();
+    		txt6(data_arr6);
+    		
+    		var c = document.getElementById("myCanvas7");
+    		var ctx = c.getContext("2d");
+			var v = new histogram7(ctx, jasonData,5);   //使用json数据
+    		v.draw7();
+    		slide7();
+    		
+			//loadData7(86);//外界调用
+    		txt7(username7);
+			
+			
+
+		}
+		window.onload = init;
+    </script>
+	
+	<script>  
+windowWidth=window.innerWidth;
+windowHeight=window.innerHeight;
+scaleW=window.innerWidth/320;
+scaleH=window.innerHeight/480;
+
+
+
+$("#return").click(function(){
+	window.demo.returnMain();
+})
+
+function resizeHtml(){
+	var resizes = document.querySelectorAll('.resize');
+			  for (var j=0; j<resizes.length; j++) {
+			   resizes[j].style.width=parseInt(resizes[j].style.width)*scaleW+'px';
+			   resizes[j].style.height=parseInt(resizes[j].style.height)*scaleH+'px';
+			   resizes[j].style.top=parseInt(resizes[j].style.top)*scaleH+'px';
+			   resizes[j].style.left=parseInt(resizes[j].style.left)*scaleW+'px'; 
+			   resizes[j].style.marginLeft=parseInt(resizes[j].style.marginLeft)*scaleW+'px'; 
+			  }
+			  
+	var text_resizes = document.querySelectorAll('.text_resize');
+			for (var j=0; j<text_resizes.length; j++) {
+			   text_resizes[j].style.fontSize=parseInt(text_resizes[j].style.fontSize)*scaleW+'px';
+			   a=resizes[j].style.fontSize;
+			  }
+}
+		  
+function loadData3(year,cost,rest,total){
+        $("#leader3total").text(total);
+        $("#leader3cost").text(cost);
+        $("#leader3rest").text(rest);
+		$("#leader3year").text(year);
+        b=160*cost/total/10000;
+        c=160*rest/total/10000;
+        if((cost!==0)&&(rest!==0)){
+        $("#leader3firstrec").css("width",b);
+
+        $("#leader3secondrec").css("width",c);
+        $("#leader3secondrec").css("left",b+120);
+        $("#leader3second_desc").css("margin-left",b+20);}
+        else if((cost==0)&&(rest!==0)){$("#leader3firstrec").css("width",0);
+        $("#leader3secondrec").css("width",c);
+        $("#leader3secondrec").css("left",0+120);
+        $("#leader3second_desc").css("margin-left",b+20);
+        }
+		else if((cost==0)&&(rest==0)){
+		$("#leader3firstrec").css("width",80);
+        $("#leader3secondrec").css("width",80);
+        $("#leader3secondrec").css("left",80+120);
+        $("#leader3second_desc").css("margin-left",80+20);
+        }
+        $("#leader3first_desc").text(cost);
+        $("#leader3second_desc").text(rest);
+        
+        //$("#leader3airplane").animate({left:windowWidth*0.1+b+40},500);
+    }
+		  
+function loadData5(score,total,edit){
+    	   $("#score4scoreNum").text(score);
+    
+    	   
+    	   if (score<60){
+    		   $("#score4sentence").attr("src","./images/lowscore.png");
+    		   
+    		   $("#score4thumb").attr("src","./images/hand.png");
+    		}
+    	   else if(score<80){
+    		   $("#score4sentence").attr("src","./images/middlescore.png");
+				$("#score4thumb").attr("src","./images/hand.png");
+    		   
+    		}
+			else{
+				$("#score4sentence").attr("src","./images/highscore.png");
+				$("#score4thumb").attr("src","./images/thumb.png");
+				$("#score4sentence").css("width",80);
+    		    $("#score4sentence").css("left",120);
+				
+			}
+    	  
+    		
+    		$("#score4total").text(total);
+    		$("#score4edit").text(edit);
+			
+			
+		//airplane_left=parseInt($("#leader3secondrec").css("left"))-parseInt($("#leader3airplane").css("width"))+10;
+		//$("#leader3airplane").css("left",airplane_left);
+	}
+</script>
+</body>
+</html>

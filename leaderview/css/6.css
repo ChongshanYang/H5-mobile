@@ -1,0 +1,183 @@
+#background6
+{
+	position:absolute;
+    width:100%; 
+    height:100%; 
+    z-index:-1;
+    margin-top:-0.65rem;
+    margin-left:-0.65rem;
+}
+ .demand6
+{
+	color:#FFFf00;
+	font-size: 5rem;
+}
+#online6
+{
+	color:#FFFf00;
+	font-size: 5rem;
+}
+#outline6
+{
+	color:#FFFf00;
+	font-size: 5rem;
+}
+#text6
+{
+	position: absolute;
+	color:#FFFFFF;
+	font-size:3rem;
+	margin-top:60px;
+	margin-left:30px;
+}
+@media screen and (min-width: 320px) {
+#canvas_circle6
+{
+	position:absolute;
+	margin-top:150px;
+	margin-left:45px;
+}
+
+#percent6
+{
+	position:absolute;
+	color:#FFFf00;
+	font-size: 8rem;
+	margin-top:240px;
+	margin-left:125px;
+}
+#rocket6
+{
+	position:absolute;
+	margin-top:350px;
+	margin-left:150px;
+}
+#gas6
+{
+	position:absolute;
+	margin-top:380px;
+	margin-left:88px;
+}
+}
+ 
+@media screen and (min-width: 360px) {
+#canvas_circle6
+{
+	position:absolute;
+	margin-top:180px;
+	margin-left:70px;
+}
+
+#percent6
+{
+	position:absolute;
+	color:#FFFf00;
+	font-size: 8rem;
+	margin-top:270px;
+	margin-left:145px;
+}
+#rocket6
+{
+	position:absolute;
+	margin-top:380px;
+	margin-left:175px;
+}
+#gas6
+{
+	position:absolute;
+	margin-top:410px;
+	margin-left:113px;
+}
+}
+@media screen and (min-width: 370px) {
+#canvas_circle6
+{
+	position:absolute;
+	margin-top:190px;
+	margin-left:80px;
+}
+
+#percent6
+{
+	position:absolute;
+	color:#FFFf00;
+	font-size: 8rem;
+	margin-top:278px;
+	margin-left:155px;
+}
+#rocket6
+{
+	position:absolute;
+	margin-top:400px;
+	margin-left:185px;
+}
+#gas6
+{
+	position:absolute;
+	margin-top:430px;
+	margin-left:123px;
+}
+}
+ 
+@media screen and (min-width: 400px) {
+#canvas_circle6
+{
+	position:absolute;
+	margin-top:200px;
+	margin-left:95px;
+}
+
+#percent6
+{
+	position:absolute;
+	color:#FFFf00;
+	font-size: 8rem;
+	margin-top:290px;
+	margin-left:165px;
+}
+#rocket6
+{
+	position:absolute;
+	margin-top:450px;
+	margin-left:190px;
+}
+#gas6
+{
+	position:absolute;
+	margin-top:480px;
+	margin-left:128px;
+}
+
+}
+ 
+@media screen and (min-width: 410px) {
+#canvas_circle6
+{
+	position:absolute;
+	margin-top:220px;
+	margin-left:95px;
+}
+
+#percent6
+{
+	position:absolute;
+	color:#FFFf00;
+	font-size: 8rem;
+	margin-top:310px;
+	margin-left:165px;
+}
+#rocket6
+{
+	position:absolute;
+	margin-top:450px;
+	margin-left:190px;
+}
+#gas6
+{
+	position:absolute;
+	margin-top:480px;
+	margin-left:128px;
+}
+
+}
+ 

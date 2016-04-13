@@ -1,0 +1,87 @@
+#background7
+{
+	position:absolute;
+    width:100%; 
+    height:100%; 
+    z-index:-1;
+    margin-top:-0.65rem;
+    margin-left:-0.65rem;
+}
+ #text7
+ {
+ 	margin-top:80px;
+ 	position:absolute;
+ 	font-size:3rem;
+ 	color:#FFFFFF;
+ }
+ #p17
+ {
+ 	margin-left:40px;
+ }
+ #p27
+ {
+ 	margin-left:80px;
+ }
+ #username7
+ {
+ 	font-size:7rem;
+ 	color:#FFFF00;
+ }
+@media screen and (min-width: 320px) {
+    #histogram7
+ {
+ 	width:0px;
+ 	position:absolute;
+ 	margin-left:15px;
+ 	margin-top:15px;
+ }
+}
+@media screen and (min-width: 340px) {
+    #histogram7
+ {
+ 	width:0px;
+ 	position:absolute;
+ 	margin-left:22px;
+ 	margin-top:15px;
+ }
+}
+ 
+@media screen and (min-width: 360px) {
+    #histogram7
+ {
+ 	width:0px;
+ 	position:absolute;
+ 	margin-left:28px;
+ 	margin-top: 15px;
+ }
+}
+@media screen and (min-width: 370px) {
+    #histogram7
+ {
+ 	width:0px;
+ 	position:absolute;
+ 	margin-left:34px;
+ 	margin-top:18px;
+ }
+}
+ 
+@media screen and (min-width: 400px) {
+   #histogram7
+ {
+ 	width:0px;
+ 	position:absolute;
+ 	margin-left:48px;
+ 	margin-top:25px;
+ }
+}
+ 
+@media screen and (min-width: 410px) {
+   #histogram7
+ {
+ 	width:0px;
+ 	position:absolute;
+ 	margin-left:55px;
+ 	margin-top: 30px;
+ }
+}
+

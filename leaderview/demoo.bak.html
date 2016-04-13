@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>loading..</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="./css/animate.min.css">
+    <link rel="stylesheet" href="./css/swiper.min.css">
+	<link rel="stylesheet" href="./css/1.css">
+	<link rel="stylesheet" href="./css/2.css">
+	<link rel="stylesheet" href="./css/4.css">
+	<link rel="stylesheet" href="./css/6.css">
+	<link rel="stylesheet" href="./css/7.css">
+	<link rel="stylesheet" href="./css/8.css">
+	<script src="js/jquery-1.12.2.min.js"></script>
+
+	<script type="text/javascript" src="./js/Data.js" ></script>
+    <!-- Demo styles -->
+    <style>
+	*{
+	margin:0;
+	padding:0;
+	}
+    html, body {
+        position: relative;
+		width:100%;
+        height: 100%;
+		margin:0;
+		padding:0;
+        font-size: 4px;
+		color:white;
+		font-family:"microsoft yahei";
+		
+    }
+    @media screen and (min-width: 324px) {
+    	html {font-size: 4px;}
+	}
+ 
+	@media screen and (min-width: 360px) {
+    	html {font-size: 5px;}
+	}
+ 
+	@media screen and (min-width: 400px) {
+    	html {font-size: 5.5px;}
+	}
+ 
+	@media screen and (min-width: 440px) {
+    	html {font-size: 6px;}
+	}
+ 
+	@media screen and (min-width: 480px) {
+    	html {font-size: 7px;}
+	}
+ 
+	@media screen and (min-width: 640px) {
+   		html {font-size: 14px;}
+	}
+	
+    /*body {
+        background: #eee;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        color:#000;
+        margin: 0;
+        padding: 0;
+    }*/
+    .swiper-container {
+        width: 100%;
+        height: 100%;
+    }
+    /*.swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+
+        /* Center slide text vertically */
+        /*display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+    }*/
+	
+	.abs{
+	position:absolute;
+	text-align:center;
+	}
+	
+	@-webkit-keyframes start {
+	0%,30% {opacity: 0;-webkit-transform: translate(0,10px);}
+	60% {opacity: 1;-webkit-transform: translate(0,0);}
+	100% {opacity: 0;-webkit-transform: translate(0,-8px);}
+	}
+	@-moz-keyframes start {
+		0%,30% {opacity: 0;-moz-transform: translate(0,10px);}
+		60% {opacity: 1;-moz-transform: translate(0,0);}
+		100% {opacity: 0;-moz-transform: translate(0,-8px);}
+	}
+	@keyframes start {
+		0%,30% {opacity: 0;transform: translate(0,10px);}
+		60% {opacity: 1;transform: translate(0,0);}
+		100% {opacity: 0;transform: translate(0,-8px);}
+	}
+	#arrow{
+	position:absolute;
+	z-index:999;
+	-webkit-animation: start 1.5s infinite ease-in-out;
+}
+	
+    </style>
+</head>
+<body>
+    <!-- Swiper -->
+    <div class="swiper-container">
+			<img src="./images/return.png" style="position:absolute;z-index:999; width:14px;height:14px; top:15px; left:15px;" id="return" class="resize"> 
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"   style="background:url(./img/L1.png) no-repeat left top; background-size:100% 100%;">
+				<div id=text1>
+					<span id="username1" class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="0.3s"></span>,您好!</br>
+					欢迎使用需求管理掌上平台。</br>
+					您将在这里了解到您部门的需求信息。
+				</div>				
+            </div>
+            <!--//////////////////////////////////////////////////////////////////////////////////////////////-->
+            <div class="swiper-slide"   style="background:url(./img/L2.png) no-repeat left top; background-size:100% 100%;">
+				<div id="text2">
+					2015年
+					</br>
+					业务部门一共提出了<span id=totaldemand2 class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="0.3s"></span>个需求，
+					</br>
+					占所有部门排名<span id=rank2 class="ani" swiper-animate-effect="flash" swiper-animate-duration="1s" swiper-animate-delay="0.3s"></span>
+				</div>		
+				<div id="canvas2">
+					<div id="timetext12" class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="0.3s">其他部门<span id=otherdep2></span>个</div>
+					<div id="timetext22" class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="0.3s">业务部门<span id=bdep2></span>个</div>
+					<div id = "circle2" class="ani" swiper-animate-effect="rubberBand" swiper-animate-duration="1s" swiper-animate-delay="0.3s">
+					<canvas id="canvas_circle2" width="280px" height="280px"  >
+						浏览器不支持canvas
+					</canvas>	</div>
+				</div>
+				<div id= "line2" class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="3s" swiper-animate-delay="0.3s">
+					<canvas id="canvas_line2" width="300" height="550px" >
+					浏览器不支持canvas</canvas>
+				</div>
+            </div>
+            <!--//////////////////////////////////////////////////////////////////////////////////////////////-->
+            <div class="swiper-slide leaderslide3"  style="background:url(images/superCost.png) no-repeat left top; background-size:100% 100%;">
+			
+				<div class="abs leader3desc resize text_resize" style="font-size:14px; width:324px;height:66px;left:0px;top:80px;z-index:5;">
+					分配资源共<span id="leader3total"  class="text_resize" style="font-size:24px;color:yellow">25</span>万元
+					<br/>
+					共花费了<span id="leader3cost"   class="text_resize" style="font-size:24px;color:yellow" >123456</span>成本
+					<br/>
+					还剩余<span id="leader3rest"   class="text_resize" style="font-size:24px;color:yellow" >34443</span>成本
+				</div>
+				
+				<div class="leader3bottom">
+						<div class="abs leader3bottom_icon">
+							<img class="abs leader3planet resize"  style="width:80px;height:60px;left:50px;top:300px;z-index:5;" src="./images/planet.png"/>
+							<p class="abs leader3year resize text_resize" id="leader3year" style="width:50px;left:58px;top:312px;font-size:10px; z-index:6;">2015</p>
+						</div>
+						<div class="leader3bottom_right" >
+							<div id="leader3firstrec" class="abs leader3rect resize" style="width:80px;height:24px;left:100px;top:324px;z-index:4;border-radius: 14px;background-color: #0F81dd;"></div>
+							<img id="leader3airplane" class="abs resize" src="./images/airplane.png"  style="width:50px;height:30px;left:100px;top:318px;z-index:5;"/>
+							<div id="leader3secondrec" class="abs leader3rect resize" style="width:80px;height:24px;left:200px;top:324px;z-index:4;border-radius: 14px;background-color: #0d538f;"></div>
+							<div class="abs leader3legend resize text_resize" style="font-size:8px; width:324px;height:24px;left:100px;top:360px;z-index:4;">
+								<div id="leader3first_desc"  style=" float:left">11</div>
+								<div id="leader3second_desc" class="resize" style=" float:left">22</div>
+							</div>
+						</div>
+				</div>
+			
+			
+			</div>
+            <!--//////////////////////////////////////////////////////////////////////////////////////////////-->            
+            <div class="swiper-slide"   style="background:url(./img/L4.png) no-repeat left top; background-size:100% 100%;">
+			
+				<div id="text4">
+					您所管理的部门使用资源排名第<span id=rank14 class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="0.3s"></span>名，</br>
+				</br>
+					占所有部门比例为<span id=proportion4 class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="0.3s"></span>%</br>
+				</div>
+				<div id=man4 class="ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1s" swiper-animate-delay="1s">
+					<img id=manimg4 src="./img/man.png" alt="man" width="80"height="85">
+				<div id=rank4 class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="0.3s">第<span id=rank24></span>名</div>
+				</div>
+				<div id="circle_canvas4">
+					<canvas id="canvas_circle4" width="180px" height="180px">
+					浏览器不支持canvas
+					</canvas>
+					<img id="rocketgas4" src="./img/rocketgas.png" alt="littleRocket" width="230"height="230">
+					<div id=percent4 class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="0.3s"><span id=proportion24></span></div>
+				</div>		
+            </div>
+            <!--//////////////////////////////////////////////////////////////////////////////////////////////--> 
+            <div class="swiper-slide leaderslide5"  style="background:url(images/score_bg.png) no-repeat left top; background-size:100% 100%;">
+				
+				<div class="instruction abs resize text_resize" style="font-size:14px; width:324px;height:66px;left:0px;top:40px;z-index:5;">
+				需求共<span id="score4total" class="text_resize" style="font-size:24px;color:yellow" >24</span>个
+				<br/>
+				其中有<span id="score4edit" class="text_resize" style="font-size:24px;color:yellow" >6</span>个已修改
+				<br/>
+				<br/>
+				需求质量分数：
+				</div>
+
+				<div id="score4scoreNum" class="score abs resize text_resize"  style="color:#412000; font-size:42px; width:324px;height:66px;left:0px;top:175px;z-index:5;">
+					75
+				</div>
+				<div class="words"  style="width:324px;height:66px;left:0px;top:230px;z-index:5;">
+					<img class="abs resize" id="score4sentence" style="width:200px;height:30px;left:60px;top:230px;z-index:5;" src="./images/lowscore.png"/>
+				</div>
+
+				<div class="imgbox">
+					<img id="score4thumb" class="abs image resize" style="width:100px;height:80px;left:224px;top:340px;z-index:5;" src="./images/thumb.png" style="width:0"/>
+				</div>
+				
+			</div>
+			
+			
+            <!--//////////////////////////////////////////////////////////////////////////////////////////////--> 
+            <div class="swiper-slide"   style="background:url(./img/L6.png) no-repeat left top; background-size:100% 100%;">
+    
+				<div id="text6">
+					您所管理部门提出的需求，已上线<span id=online6 class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="0.3s"></span>个</br>
+					</br>
+					未上线<span id=outline6 class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="0.3s"></span>个</br>
+					</br>
+					上线率为：
+				</div>
+				<div id="circle_canvas6">
+				<div class="ani" swiper-animate-effect="shake" swiper-animate-duration="1s" swiper-animate-delay="0.3s">
+					<canvas id="canvas_circle6" width="224px" height="224px">
+					浏览器不支持canvas
+					</canvas></div>
+					<div class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="1s"><span id=percent6></span></div>
+					<div id=gas6 class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="3s" swiper-animate-delay="1s"><img src="./img/gas.png" alt="gas" width="150"height="200"></div>
+					<div id=rocket6 class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="0.3s"><img src="./img/rocket.png" alt="rocket" width="25" height="50"></div>
+				</div>			
+            </div>
+            <div class="swiper-slide"   style="background:url(./img/L7.png) no-repeat left top; background-size:100% 100%;">
+				<div id=text7>
+					<div class="ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1.5s" swiper-animate-delay="0.3s"><p id=p17>有以下员工为部门贡献了力量！</p></div>
+					<div class="ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1.5s" swiper-animate-delay="1.5s"><p id=p27>部门共提出了<span id=username7></span>个需求！</p></div>			
+				</div>
+				<div id=histogram7 class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="3s"><canvas id ="myCanvas7" <!--style="border:1px solid #d3d3d3;-->"></canvas></div>				
+            </div>
+            <div class="swiper-slide"   style="background:url(./img/L8.png) no-repeat left top; background-size:100% 100%;">
+				<div id=text8>
+					<div class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="0.3s"><p>尊敬的<span id=username8 ></span>,相信在您的领导下,</p></div>
+					<div class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="1s"><p>业务部门将更上一层楼！</p></div>
+					<div class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="2s"><p>贵州移动，有您更精彩！</p></div>
+				</div>
+            </div>
+            <!--<div class="swiper-slide">Slide 9</div>
+            <div class="swiper-slide">Slide 10</div>-->
+        </div>
+		<img src="./images/arrow.png" style="width:24px;height:30px; top:424px; left:150px;" id="arrow" class="resize"/> 
+        <!-- Add Pagination -->
+        <div class="swiper-pagination" ></div>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="./js/swiper.min.js"></script>
+    <script src="./js/swiper.animate.min.js"></script>
+    <!-- Initialize Swiper -->
+    <script>
+    /*var mySwiper = new Swiper ('.swiper-container', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+        direction: 'vertical'
+  		onInit: function(swiper){ //Swiper2.x的初始化是onFirstInit
+    	swiperAnimateCache(swiper); //隐藏动画元素 
+    	swiperAnimate(swiper); //初始化完成开始动画
+  	}, 
+  	onSlideChangeEnd: function(swiper){ 
+    	swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
+  	} 
+  	}) */
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+        direction: 'vertical',
+        onInit: function(swiper){ //Swiper2.x的初始化是onFirstInit
+    	swiperAnimateCache(swiper); //隐藏动画元素 
+    	swiperAnimate(swiper); //初始化完成开始动画
+  		}, 
+  		onSlideChangeEnd: function(swiper){ 
+    	swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
+		
+		
+  		} ,
+		
+		onSlideChangeStart: function(swiper){
+			 if(swiper.activeIndex==2){
+
+				airplane_left=parseInt($("#leader3secondrec").css("left"))-parseInt($("#leader3airplane").css("width"))+10;
+				//alert(airplane_left);
+				$("#leader3airplane").animate({left:airplane_left},500);
+			 };
+			 if(swiper.activeIndex==4){
+				$("#score4thumb").addClass("animated bounceInRight");
+				//$("#score4thumb").removeClass("animated bounceInRight");
+			 };
+	 
+		},
+    });
+    function txt1(username1){
+			$("#username1").text(username1);
+			$("#username8").text(username1);
+		}
+		var username1;
+     	function loadData1(userName1){
+     		username1 = userName1;
+     	}
+     	////////////////////////////////////////////////////////////////////////////////////////////
+     	function drawCircle2(canvasId2, data_arr2){
+       		var c = document.getElementById(canvasId2);
+       		var ctx = c.getContext("2d");
+       		var radius = (c.height) / 2 - 25; //半径
+       		var ox = radius + 25, oy = radius + 25; //圆心
+       		ctx.beginPath();  //绘制背景圆
+       		ctx.moveTo(ox, oy);  //圆心
+       		ctx.arc(ox, oy, (c.height-30) / 2, 0, Math.PI * 2, false); // 画圆,最后一个参数是方向顺时针还是逆时针   
+       		ctx.closePath();  // 填充颜色  
+       		ctx.fillStyle = '#252553';  
+       		ctx.fill(); 
+       		var width = 30, height = 10; //图例宽和高
+       		var posX = ox * 2 + 20, posY = 30;   //
+       		var textX = posX + width + 5, textY = posY + 10;
+       		var startAngle = 0; //起始弧度
+       		var endAngle = 0;  //结束弧度
+       		endAngle1 = endAngle + (data_arr2[1]/(data_arr2[1]+data_arr2[0]) )* Math.PI + Math.PI/2; 
+       		ctx.beginPath();  //绘制2016年半部分
+       		ctx.moveTo(ox, oy);  //圆心
+       		ctx.arc(ox, oy, radius, Math.PI/2, endAngle, false); // 画圆,最后一个参数是方向顺时针还是逆时针   
+       		ctx.closePath();  // 填充颜色  
+       		ctx.fillStyle = "#7D7DFF";  
+       		ctx.fill(); 
+       		ctx.beginPath();  //绘制2015年部分
+       		ctx.moveTo(ox, oy);  //圆心
+       		endAngle2 = endAngle1 + (data_arr2[0]/(data_arr2[1]+data_arr2[0])) * Math.PI*2;
+       		ctx.arc(ox, oy, radius, endAngle1, endAngle2, false); // 画圆,最后一个参数是方向顺时针还是逆时针   
+       		ctx.closePath();  // 填充颜色  
+       		ctx.fillStyle = "#84C1FF";  
+       		ctx.fill(); 
+       		ctx.beginPath();  //绘制2016年半部分
+       		ctx.moveTo(ox, oy);  //圆心
+       		ctx.arc(ox, oy, radius, endAngle2,Math.PI/2 , false); // 画圆,最后一个参数是方向顺时针还是逆时针   
+       		ctx.closePath();  // 填充颜色  
+       		ctx.fillStyle = "#7D7DFF";  
+       		ctx.fill();    //上下画半圆
+    		}
+   		function drawline2(canvasId2){
+   			var c = document.getElementById(canvasId2);
+    		var ctx = c.getContext("2d");
+    		var radius = (c.width-20) / 2 ; //半径
+    		var ox = radius + 20, oy = radius + 120; //圆心
+       		ctx.beginPath();
+   	   		ctx.moveTo(ox-45,oy+180);
+       		ctx.lineTo(ox+15,oy+250);
+       		ctx.lineTo(ox+130,oy+250);
+       		ctx.lineWidth = 1;
+       		ctx.strokeStyle = 'black';
+       		ctx.stroke(); 
+       		ctx.closePath();
+       		ctx.beginPath();
+   	   		ctx.moveTo(ox-45,oy);
+       		ctx.lineTo(ox+15,oy-60);
+       		ctx.lineTo(ox+130,oy-60);
+       		ctx.lineWidth = 1;
+       		ctx.strokeStyle = 'black';
+       		ctx.stroke(); 
+       		ctx.closePath();
+   			}
+		function txt2(totaldemand2,Rank2,data_arr2){
+			$("#totaldemand2").text(totaldemand2);
+			$("#rank2").text(Rank2);
+			$("#otherdep2").text(data_arr2[0]);
+			$("#bdep2").text(data_arr2[1]);
+			}
+		var totaldemand2;
+		var Rank2;
+		var data_arr2;
+		function loadData2(totalDemand2,rank2,data_arr2){
+			totaldemand2 = totalDemand2;
+			Rank2 = rank2;
+			this.data_arr2 = data_arr2;
+			}
+		/////////////////////////////////////////////////////////////////////////////////////////////
+		var x, n=0, rotINT;
+		function rotate(imgId) {
+        x = document.getElementById(imgId);
+        clearInterval(rotINT);
+        rotINT = setInterval("startRotate()",10);
+    	}
+
+		function pause () {
+			clearInterval(rotINT);
+		}
+
+		function startRotate() {
+			n = n + 1;
+			x.style.transform = "rotate(" + n + "deg)";
+			x.style.webkitTransform = "rotate(" + n + "deg)";
+			x.style.OTransform = "rotate(" + n + "deg)";
+			x.style.MozTransform = "rotate(" + n + "deg)";
+			if (n == 180 || n == 360) {
+				if (n >= 360){
+					n = 0;
+				}
+			}
+		}
+		function drawCircle4(canvasId4, proportion4){
+         	var c = document.getElementById(canvasId4);
+      	 	var ctx = c.getContext("2d");
+       	 	var radius = (c.height) / 2 - 20; //半径
+      	 	var ox = radius + 20, oy = radius + 20; //圆心
+      	 	ctx.beginPath();  //绘制背景圆
+      	 	ctx.moveTo(ox, oy);  //圆心
+      	 	ctx.arc(ox, oy, (c.height) / 2, 0, Math.PI * 2, false); // 画圆,最后一个参数是方向顺时针还是逆时针   
+      	 	ctx.closePath();  // 填充颜色  
+      	 	ctx.fillStyle = '#252553';  
+      	 	ctx.fill(); 
+      	 	var endAngle = Math.PI+(proportion4)*Math.PI*2;  //结束弧度
+      	 	ctx.beginPath();  //绘制饼图
+      	 	ctx.moveTo(ox, oy);  //圆心
+      	 	ctx.arc(ox, oy, (c.height) / 2, Math.PI, endAngle, false); // 画圆,最后一个参数是方向顺时针还是逆时针   
+      	 	ctx.closePath();  // 填充颜色  
+      	 	ctx.fillStyle = '#F04E5D';  
+      	 	ctx.fill(); 
+      	 	ctx.beginPath();  //绘制覆盖圆
+      	 	ctx.moveTo(ox, oy);  //圆心
+      	 	ctx.arc(ox, oy, (c.height) / 2-35, 0, Math.PI * 2, false); // 画圆,最后一个参数是方向顺时针还是逆时针   
+      	 	ctx.closePath();  // 填充颜色  
+      	 	ctx.fillStyle = '#484891';  
+      	 	ctx.fill(); 
+			}
+      	function slide4(){
+      		$("#manimg4").animate({left: $(window).width()*2/3}, 1000);
+      		}
+      	function txt4(rank4,proportion4){
+      		$("#rank14").text(rank4);
+      		$("#rank24").text(rank4);
+      		$("#proportion4").text(Math.round(proportion4*100));
+      		$("#proportion24").text(Math.round(proportion4*100)+"%");
+      		}
+      	var rank4,proportion4;
+      	function loadData4(rank4,proportion4){
+      		this.rank4 = rank4;
+      		this.proportion4 = proportion4;
+      		}
+      	//////////////////////////////////////////////////////////////////////////////////////////////////
+      	function drawCircle6(canvasId6, data_arr6)
+      	{
+         var c = document.getElementById(canvasId6);
+      	 var ctx = c.getContext("2d");
+       	 var radius = (c.height) / 2 - 20; //半径
+      	 var ox = radius + 20, oy = radius + 20; //圆心
+      	 ctx.beginPath();  //绘制背景圆
+      	 ctx.moveTo(ox, oy);  //圆心
+      	 ctx.arc(ox, oy, (c.height) / 2, 0, Math.PI * 2, false); // 画圆,最后一个参数是方向顺时针还是逆时针   
+      	 ctx.closePath();  // 填充颜色  
+      	 ctx.fillStyle = '#252553';  
+      	 ctx.fill(); 
+      	 var endAngle = Math.PI+((data_arr6[1])/(data_arr6[0]+data_arr6[1]))*Math.PI*2;  //结束弧度
+      	 ctx.beginPath();  //绘制饼图
+      	 ctx.moveTo(ox, oy);  //圆心
+      	 ctx.arc(ox, oy, (c.height) / 2, Math.PI, endAngle, false); // 画圆,最后一个参数是方向顺时针还是逆时针   
+      	 ctx.closePath();  // 填充颜色  
+      	 ctx.fillStyle = '#F04E5D';  
+      	 ctx.fill(); 
+      	 ctx.beginPath();  //绘制覆盖圆
+      	 ctx.moveTo(ox, oy);  //圆心
+      	 ctx.arc(ox, oy, (c.height) / 2-35, 0, Math.PI * 2, false); // 画圆,最后一个参数是方向顺时针还是逆时针   
+      	 ctx.closePath();  // 填充颜色  
+      	 ctx.fillStyle = '#484891';  
+      	 ctx.fill(); 
+		}
+      	function up6(){
+      		$("#rocket6").animate({top: '-100px'}, 3000);
+      	}
+     	function txt6(data_array6){
+     		$("#online6").text(data_array6[1]);
+     		$("#outline6").text(data_array6[0]);
+     		$("#percent6").text(Math.round(((data_array6[1])/(data_array6[0]+data_array6[1]))*100) + "%");
+     	}
+     	var data_arr6;
+     	function loadData6(data_array6){
+     		data_arr6 = data_array6;
+     	}
+      	//////////////////////////////////////////////////////////////////////////////////////////////////
+      	function histogram7(ctx, data, yInterval) {
+    		this.ctx = ctx;
+    		//Json数据
+    		this.data = data;    
+    		//Y轴一刻度的数值
+    		this.yInterval = yInterval;
+		};
+ 		histogram7.prototype.draw7 = function () {
+    		var colors = ["#3366FF", "#FFCC00"];
+    		var dataarray = this.data.data;
+    		var dataCollection;
+    		var metaData;    
+    		var maxamount = 0;
+    		var categoryCount = dataarray.length;
+    		var dataCount = dataarray[0].datacollection.length;
+   			this.ctx.canvas.height =500; 
+   			this.ctx.canvas.width = 300;
+    		//绘制柱
+    		this.ctx.lineWidth = 300/((2*dataCount)+1);
+    		var x = 1.5*(300/((2*dataCount)+1));
+    		var y = this.ctx.canvas.clientHeight;    
+    		for (var i = 0; i < dataarray.length; i++) {
+        		dataCollection = dataarray[i].datacollection;
+        		this.ctx.beginPath();
+        		this.ctx.strokeStyle = colors[i]; 
+        		for (var j = 0; j < dataCollection.length; j++) {          
+            		metaData = dataCollection[j];
+            		this.ctx.moveTo(x, y -40);
+            		this.ctx.lineTo(x, y - 40 - 1 - (metaData.amount / this.yInterval) * 50 );
+            		this.ctx.stroke();
+            		//绘制柱名
+            		this.ctx.font = "14px Arial";
+            		this.ctx.fillStyle = "#FFFFFF"; 
+            		this.ctx.textAlign = "center";					
+            		this.ctx.fillText(metaData.amount + "次", x, y - 50 - (metaData.amount / this.yInterval) * 50);						
+            		//绘制柱的标题
+            		this.ctx.font = "14px Arial";  
+            		this.ctx.textAlign = "center";
+            		this.ctx.fillText(metaData.title, x , y -10);
+            		x += 2*(300/((2*dataCount)+1));
+        		}
+        		x = 80 + 30 * (i + 1);       
+    		}    
+		}
+ 		function slide7(){
+    			$("#histogram7").animate({width:"300px"},5000);	
+  			}
+ 		function txt7(username7){
+			$("#username7").text(username7);
+		}
+		var username7;
+     	function loadData7(userName7){
+     		username7 = userName7;
+     	}
+      	//////////////////////////////////////////////////////////////////////////////////////////////////
+		//username8和username1相同
+      	//////////////////////////////////////////////////////////////////////////////////////////////////
+		function init(){
+			loadData1("刘总");//外界调用
+			loadData2(22,6,[42,22]);//外界调用
+			loadData3(2016,143234,106766,25);
+			loadData4(6,0.56);//外界调用
+			loadData5(54,54,13);
+			loadData6([15,7]);//外界调用
+			loadData7(86);//外界调用
+			
+			
+			resizeHtml();
+			
+			//loadData1("刘总");//外界调用
+			txt1(username1);
+			
+    		//loadData2(22,6,[42,22]);//外界调用
+    		drawCircle2("canvas_circle2", data_arr2);
+    		drawline2("canvas_line2");
+    		txt2(totaldemand2,Rank2,data_arr2);
+    		
+    		//loadData4(6,0.56);//外界调用
+    		drawCircle4("canvas_circle4", proportion4);
+    		slide4();
+			rotate("rocketgas4")			
+			txt4(rank4,proportion4);
+			
+			//loadData6([15,7]);//外界调用
+    		drawCircle6("canvas_circle6", data_arr6);
+    		up6();
+    		txt6(data_arr6);
+    		
+    		var c = document.getElementById("myCanvas7");
+    		var ctx = c.getContext("2d");
+			var v = new histogram7(ctx, jasonData,5);   //使用json数据
+    		v.draw7();
+    		slide7();
+    		
+			//loadData7(86);//外界调用
+    		txt7(username7);
+			
+			
+
+		}
+		window.onload = init;
+    </script>
+	
+	<script>  
+windowWidth=window.innerWidth;
+windowHeight=window.innerHeight;
+scaleW=window.innerWidth/320;
+scaleH=window.innerHeight/480;
+
+
+
+$("#return").click(function(){
+	window.demo.returnMain();
+})
+
+function resizeHtml(){
+	var resizes = document.querySelectorAll('.resize');
+			  for (var j=0; j<resizes.length; j++) {
+			   resizes[j].style.width=parseInt(resizes[j].style.width)*scaleW+'px';
+			   resizes[j].style.height=parseInt(resizes[j].style.height)*scaleH+'px';
+			   resizes[j].style.top=parseInt(resizes[j].style.top)*scaleH+'px';
+			   resizes[j].style.left=parseInt(resizes[j].style.left)*scaleW+'px'; 
+			   resizes[j].style.marginLeft=parseInt(resizes[j].style.marginLeft)*scaleW+'px'; 
+			  }
+			  
+	var text_resizes = document.querySelectorAll('.text_resize');
+			for (var j=0; j<text_resizes.length; j++) {
+			   text_resizes[j].style.fontSize=parseInt(text_resizes[j].style.fontSize)*scaleW+'px';
+			   a=resizes[j].style.fontSize;
+			  }
+}
+		  
+function loadData3(year,cost,rest,total){
+        $("#leader3total").text(total);
+        $("#leader3cost").text(cost);
+        $("#leader3rest").text(rest);
+		$("#leader3year").text(year);
+        b=160*cost/total/10000;
+        c=160*rest/total/10000;
+        $("#leader3firstrec").css("width",b);
+
+        $("#leader3secondrec").css("width",c);
+        $("#leader3secondrec").css("left",b+120);
+
+        $("#leader3first_desc").text(cost);
+        $("#leader3second_desc").text(rest);
+        $("#leader3second_desc").css("margin-left",b-20);
+        //$("#leader3airplane").animate({left:windowWidth*0.1+b+40},500);
+    }
+		  
+function loadData5(score,total,edit){
+    	   $("#score4scoreNum").text(score);
+    
+    	   
+    	   if (score<60){
+    		   $("#score4sentence").attr("src","./images/lowscore.png");
+    		   
+    		   $("#score4thumb").attr("src","./images/hand.png");
+    		}
+    	   else if(score<80){
+    		   $("#score4sentence").attr("src","./images/middlescore.png");
+				$("#score4thumb").attr("src","./images/hand.png");
+    		   
+    		}
+			else{
+				$("#score4sentence").attr("src","./images/highscore.png");
+				$("#score4thumb").attr("src","./images/thumb.png");
+				$("#score4sentence").css("width",80);
+    		    $("#score4sentence").css("left",120);
+				
+			}
+    	  
+    		
+    		$("#score4total").text(total);
+    		$("#score4edit").text(edit);
+			
+			
+		//airplane_left=parseInt($("#leader3secondrec").css("left"))-parseInt($("#leader3airplane").css("width"))+10;
+		//$("#leader3airplane").css("left",airplane_left);
+	}
+</script>
+</body>
+</html>
